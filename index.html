@@ -9,6 +9,9 @@
   <meta property="og:description" content="An Aussie-based GoHighLevel agency that builds and runs the backend so you can focus on your business." />
   <meta property="og:image" content="https://dmhq.ai/images/fabian-avatar.jpg" />
   <meta name="twitter:card" content="summary" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unica+One&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,7 +28,7 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 15px;
       line-height: 1.6;
       min-height: 100vh;
@@ -33,6 +36,25 @@
       padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     img { max-width: 100%; }
+
+    h1, h2, h3 { font-family: "Unica One", sans-serif; font-weight: 400; }
+
+    /* ─── VIDEO PLACEHOLDER ─── */
+    .compare-video-wrap {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      position: relative;
+      background: #000;
+    }
+    .compare-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     /* ─── NAV ─── */
     nav {
@@ -211,19 +233,6 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .compare-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
-      object-fit: cover;
-    }
-    .light-side .compare-img {
-      background: #f0f0f0;
-      border-color: #e0e0e0;
-    }
     .compare-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .compare-item {
       display: flex;
@@ -398,7 +407,10 @@
       <!-- Left: GHL on your own -->
       <div class="compare-col dark-side">
         <div class="compare-label">GHL on your own</div>
-        <div class="compare-img"></div>
+        <div class="compare-video-wrap">
+          <video src="slow.mp4" muted playsinline loop preload="none"
+            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+        </div>
         <ul class="compare-list">
           <li class="compare-item">
             <div class="item-icon"><span class="icon-x">✕</span></div>
@@ -422,7 +434,10 @@
       <!-- Right: With DMHQ -->
       <div class="compare-col light-side">
         <div class="compare-label">With an Aussie based GHL agency</div>
-        <div class="compare-img"></div>
+        <div class="compare-video-wrap">
+          <video src="fast.mp4" muted playsinline loop preload="none"
+            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+        </div>
         <ul class="compare-list">
           <li class="compare-item">
             <div class="item-icon"><span class="icon-check">✓</span></div>
