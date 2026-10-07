@@ -47,6 +47,52 @@
       --ease-out: cubic-bezier(0.6, 0, 0.4, 1);
     }
 
+    /* ─── TICKER ─── */
+    .ticker-section {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: #0d0d0d;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+    .ticker-mask {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+    .ticker-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: ticker 30s linear infinite;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+    .ticker-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--grad);
+      flex-shrink: 0;
+    }
+
     html { color-scheme: dark; }
 
     body {
@@ -391,12 +437,45 @@
   <section class="hero">
     <div class="eyebrow">Aussie-based GoHighLevel agency</div>
     <h1>GoHighLevel, <span class="grad-text">done for you.</span></h1>
-    <p>We build and run the backend so you can focus on the business. No ticket queues, no freelancer churn. A local team inside GHL every day.</p>
+    <p>We build and run the backend. You get on with running the business. There's no ticket queue and no rotating cast of freelancers, just a local team working in your GHL.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="https://dmhq.ai" target="_blank" rel="noopener">Get in Touch →</a>
       <a class="btn btn-outline btn-lg" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Client Login</a>
     </div>
   </section>
+
+  <!-- TICKER -->
+  <div class="ticker-section">
+    <div class="ticker-mask">
+      <div class="ticker-track" id="ticker">
+        <span class="ticker-item"><span class="ticker-dot"></span>CRM Builds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Workflow Automation</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Email Campaigns</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>SMS Marketing</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Pipeline Management</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>AI Chatbots</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Funnel Builds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Calendar Integrations</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Reporting Dashboards</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Lead Follow-Up</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>GHL Onboarding</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Reputation Management</span>
+        <!-- duplicate set for seamless loop -->
+        <span class="ticker-item"><span class="ticker-dot"></span>CRM Builds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Workflow Automation</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Email Campaigns</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>SMS Marketing</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Pipeline Management</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>AI Chatbots</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Funnel Builds</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Calendar Integrations</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Reporting Dashboards</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Lead Follow-Up</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>GHL Onboarding</span>
+        <span class="ticker-item"><span class="ticker-dot"></span>Reputation Management</span>
+      </div>
+    </div>
+  </div>
 
   <!-- COMPARISON -->
   <section class="compare-section">
@@ -405,8 +484,8 @@
       <div class="compare-col dark-side">
         <div class="compare-label">GHL on your own</div>
         <div class="compare-video-wrap">
-          <video src="slow.mp4" muted playsinline loop preload="none"
-            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+          <video src="slow.mp4" muted playsinline loop preload="metadata"
+            onmouseenter="var p=this.play();if(p)p.catch(function(){})" onmouseleave="this.pause();this.currentTime=0"></video>
         </div>
         <ul class="compare-list">
           <li class="compare-item">
@@ -432,8 +511,8 @@
       <div class="compare-col light-side">
         <div class="compare-label">With an Aussie based GHL agency</div>
         <div class="compare-video-wrap">
-          <video src="fast.mp4" muted playsinline loop preload="none"
-            onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0"></video>
+          <video src="fast.mp4" muted playsinline loop preload="metadata"
+            onmouseenter="var p=this.play();if(p)p.catch(function(){})" onmouseleave="this.pause();this.currentTime=0"></video>
         </div>
         <ul class="compare-list">
           <li class="compare-item">
