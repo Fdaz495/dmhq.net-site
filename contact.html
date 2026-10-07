@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact — DMHQ</title>
+  <meta name="description" content="Get in touch with DMHQ, an Aussie-based GoHighLevel agency." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Unica+One&display=swap" rel="stylesheet" />
+  <script
+    src="https://link.dmhq.net/js/external-tracking.js"
+    data-tracking-id="tk_e68244242b8b485692420824e2b50660">
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:   #DB3EB1;
+      --blue:   #41B6E6;
+      --grad:   linear-gradient(135deg, #DB3EB1 0%, #41B6E6 100%);
+      --black:  #0A0A0A;
+      --white:  #FFFFFF;
+      --gray-400: #9CA3AF;
+      --ease-out: cubic-bezier(0.6, 0, 0.4, 1);
+      --shadow-pink: 0 8px 32px rgba(219,62,177,0.25);
+    }
+
+    html { color-scheme: dark; }
+
+    body {
+      background: var(--black);
+      color: rgba(255,255,255,0.85);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    h1, h2, h3 {
+      font-family: "Unica One", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 50;
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (max-width: 700px) { .nav-inner { padding: 0 20px; } }
+    .nav-logo {
+      font-family: "Unica One", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color 140ms var(--ease-out);
+    }
+    .nav-link:hover { color: var(--white); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 8px;
+      padding: 9px 20px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 220ms var(--ease-out), transform 140ms var(--ease-out);
+    }
+    .btn-primary { background: var(--grad); color: var(--white); }
+    .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: var(--shadow-pink); }
+
+    /* PAGE */
+    .contact-page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+    .contact-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .contact-header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .contact-header p {
+      font-size: 17px;
+      color: var(--gray-400);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .form-wrap {
+      width: 100%;
+      min-height: 680px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .form-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 674px;
+      border: none;
+      border-radius: 20px;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: var(--gray-400); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">DMHQ</a>
+      <div class="nav-right">
+        <a class="nav-link" href="https://dmhq.ai" target="_blank" rel="noopener">dmhq.ai</a>
+        <a class="btn btn-primary" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="contact-header">
+      <h1>Get in touch</h1>
+      <p>Tell us a bit about your business and what you need in GHL. We'll be in touch within one business day.</p>
+    </div>
+
+    <div class="form-wrap">
+      <iframe
+        src="https://link.dmhq.net/widget/form/NKzqasBap0ymiI5674z8"
+        id="inline-NKzqasBap0ymiI5674z8"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Website Contact"
+        data-height="674"
+        data-layout-iframe-id="inline-NKzqasBap0ymiI5674z8"
+        data-form-id="NKzqasBap0ymiI5674z8"
+        data-cookie-consent="true"
+        data-cookie-consent-provider="auto"
+        title="Website Contact">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 DMHQ &nbsp;·&nbsp; <a href="https://dmhq.ai">dmhq.ai</a></p>
+  </footer>
+
+  <script src="https://link.dmhq.net/js/form_embed.js"></script>
+
+</body>
+</html>
