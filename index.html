@@ -363,6 +363,69 @@
       line-height: 1.7;
     }
 
+    /* ─── CLIENT TICKER ─── */
+    .clients-section {
+      padding: 64px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .clients-label {
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 28px;
+    }
+    .clients-mask {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .clients-track {
+      display: flex;
+      gap: 16px;
+      padding: 4px 0;
+      width: max-content;
+      animation: clients-scroll 32s linear infinite;
+    }
+    .clients-track:hover { animation-play-state: paused; }
+    @keyframes clients-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .client-card {
+      flex-shrink: 0;
+      width: 220px;
+      height: 130px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .client-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .client-card-label {
+      position: absolute;
+      inset-x: 0;
+      bottom: 0;
+      padding: 20px 12px 10px;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+    }
+    .client-card-label span {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      display: block;
+    }
+
     /* ─── REVIEWS ─── */
     .reviews-section {
       padding: 80px 24px;
@@ -481,6 +544,30 @@
             <div class="item-text"><strong>Backing a local business.</strong> Your spend supports an Australian operator instead of a US company you already pay fees to.</div>
           </li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT TICKER -->
+  <section class="clients-section">
+    <p class="clients-label">Live on GHL with DMHQ</p>
+    <div class="clients-mask">
+      <div class="clients-track">
+        <div class="client-card"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></div>
+        <div class="client-card"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></div>
+        <div class="client-card"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></div>
+        <div class="client-card"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></div>
+        <div class="client-card"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></div>
+        <div class="client-card"><img src="images/portfolio/thinkiyo.jpg" alt="Thinkiyo" /><div class="client-card-label"><span>Thinkiyo</span></div></div>
+        <div class="client-card"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></div>
+        <!-- duplicate for seamless loop -->
+        <div class="client-card"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></div>
+        <div class="client-card"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></div>
+        <div class="client-card"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></div>
+        <div class="client-card"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></div>
+        <div class="client-card"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></div>
+        <div class="client-card"><img src="images/portfolio/thinkiyo.jpg" alt="Thinkiyo" /><div class="client-card-label"><span>Thinkiyo</span></div></div>
+        <div class="client-card"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></div>
       </div>
     </div>
   </section>
