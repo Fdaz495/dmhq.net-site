@@ -47,51 +47,6 @@
       --ease-out: cubic-bezier(0.6, 0, 0.4, 1);
     }
 
-    /* ─── TICKER ─── */
-    .ticker-section {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      background: #0d0d0d;
-      padding: 20px 0;
-      overflow: hidden;
-    }
-    .ticker-mask {
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
-    .ticker-track {
-      display: flex;
-      gap: 12px;
-      width: max-content;
-      animation: ticker 30s linear infinite;
-    }
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-    .ticker-track:hover { animation-play-state: paused; }
-    .ticker-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      font-family: "Inter", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.55);
-      white-space: nowrap;
-    }
-    .ticker-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--grad);
-      flex-shrink: 0;
-    }
 
     html { color-scheme: dark; }
 
@@ -408,6 +363,31 @@
       line-height: 1.7;
     }
 
+    /* ─── REVIEWS ─── */
+    .reviews-section {
+      padding: 80px 24px;
+      background: #0d0d0d;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .reviews-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .reviews-section h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      color: var(--white);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .reviews-widget-wrap {
+      width: 100%;
+    }
+    .reviews-widget-wrap iframe {
+      border: none;
+      width: 100%;
+      min-width: 100%;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -428,7 +408,7 @@
       <a class="nav-logo" href="/">DMHQ</a>
       <div class="nav-right">
         <a class="nav-link" href="https://dmhq.ai" target="_blank" rel="noopener">dmhq.ai</a>
-        <a class="btn btn-primary" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Client Login</a>
+        <a class="btn btn-primary" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Login</a>
       </div>
     </div>
   </nav>
@@ -440,42 +420,9 @@
     <p>We build and run the backend. You get on with running the business. There's no ticket queue and no rotating cast of freelancers, just a local team working in your GHL.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="https://dmhq.ai" target="_blank" rel="noopener">Get in Touch →</a>
-      <a class="btn btn-outline btn-lg" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Client Login</a>
+      <a class="btn btn-outline btn-lg" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Login</a>
     </div>
   </section>
-
-  <!-- TICKER -->
-  <div class="ticker-section">
-    <div class="ticker-mask">
-      <div class="ticker-track" id="ticker">
-        <span class="ticker-item"><span class="ticker-dot"></span>CRM Builds</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Workflow Automation</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Email Campaigns</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>SMS Marketing</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Pipeline Management</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>AI Chatbots</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Funnel Builds</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Calendar Integrations</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Reporting Dashboards</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Lead Follow-Up</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>GHL Onboarding</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Reputation Management</span>
-        <!-- duplicate set for seamless loop -->
-        <span class="ticker-item"><span class="ticker-dot"></span>CRM Builds</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Workflow Automation</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Email Campaigns</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>SMS Marketing</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Pipeline Management</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>AI Chatbots</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Funnel Builds</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Calendar Integrations</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Reporting Dashboards</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Lead Follow-Up</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>GHL Onboarding</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Reputation Management</span>
-      </div>
-    </div>
-  </div>
 
   <!-- COMPARISON -->
   <section class="compare-section">
@@ -484,8 +431,7 @@
       <div class="compare-col dark-side">
         <div class="compare-label">GHL on your own</div>
         <div class="compare-video-wrap">
-          <video src="slow.mp4" muted playsinline loop preload="metadata"
-            onmouseenter="var p=this.play();if(p)p.catch(function(){})" onmouseleave="this.pause();this.currentTime=0"></video>
+          <video class="hover-video" src="slow.mp4" muted playsinline loop preload="metadata"></video>
         </div>
         <ul class="compare-list">
           <li class="compare-item">
@@ -511,8 +457,7 @@
       <div class="compare-col light-side">
         <div class="compare-label">With an Aussie based GHL agency</div>
         <div class="compare-video-wrap">
-          <video src="fast.mp4" muted playsinline loop preload="metadata"
-            onmouseenter="var p=this.play();if(p)p.catch(function(){})" onmouseleave="this.pause();this.currentTime=0"></video>
+          <video class="hover-video" src="fast.mp4" muted playsinline loop preload="metadata"></video>
         </div>
         <ul class="compare-list">
           <li class="compare-item">
@@ -617,12 +562,24 @@
     </div>
   </section>
 
+  <!-- REVIEWS -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+      <h2>What clients say</h2>
+      <div class="reviews-widget-wrap">
+        <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'></script>
+        <iframe class='lc_reviews_widget' src='https://reputationhub.site/reputation/widgets/review_widget/mtBYwjxtVs40gOfGSlXU?widgetId=6ac64210d5cfb3726b08464a' frameborder='0' scrolling='no' style='min-width: 100%; width: 100%;'></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2026 DMHQ &nbsp;·&nbsp; <a href="https://dmhq.ai">dmhq.ai</a></p>
   </footer>
 
   <script>
+    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
@@ -635,6 +592,18 @@
           item.classList.add('open');
           btn.setAttribute('aria-expanded', 'true');
         }
+      });
+    });
+
+    // Hover-play videos
+    document.querySelectorAll('.hover-video').forEach(video => {
+      const wrap = video.closest('.compare-video-wrap');
+      wrap.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+      });
+      wrap.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
       });
     });
   </script>
