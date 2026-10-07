@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Thanks — DMHQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Unica+One&display=swap" rel="stylesheet" />
+  <script src="https://link.dmhq.net/js/external-tracking.js" data-tracking-id="tk_e68244242b8b485692420824e2b50660"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink: #DB3EB1;
+      --grad: linear-gradient(135deg, #DB3EB1 0%, #41B6E6 100%);
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --gray-400: #9CA3AF;
+      --ease-out: cubic-bezier(0.6, 0, 0.4, 1);
+    }
+    html { color-scheme: dark; }
+    body {
+      background: var(--black);
+      color: rgba(255,255,255,0.85);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    h1 {
+      font-family: "Unica One", sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+    }
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+    }
+    @media (max-width: 700px) { .nav-inner { padding: 0 20px; } }
+    .nav-logo {
+      font-family: "Unica One", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      text-decoration: none;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+    .card { text-align: center; max-width: 480px; }
+    .check {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .check svg { width: 28px; height: 28px; }
+    .card h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); color: var(--white); margin-bottom: 16px; }
+    .card p { font-size: 16px; color: var(--gray-400); line-height: 1.7; margin-bottom: 36px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 8px;
+      padding: 11px 24px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.6);
+      transition: border-color 180ms var(--ease-out), color 180ms var(--ease-out);
+    }
+    .btn:hover { border-color: var(--pink); color: var(--pink); }
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: var(--gray-400); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">DMHQ</a>
+    </div>
+  </nav>
+  <main>
+    <div class="card">
+      <div class="check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      </div>
+      <h1>We've got it.</h1>
+      <p>Thanks for reaching out. We'll review your message and be in touch within one business day.</p>
+      <a class="btn" href="/">Back to home</a>
+    </div>
+  </main>
+  <footer>
+    <p>© 2026 DMHQ &nbsp;·&nbsp; <a href="https://dmhq.ai">dmhq.ai</a></p>
+  </footer>
+</body>
+</html>
