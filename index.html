@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>DMHQ — GoHighLevel Agency</title>
+  <meta name="description" content="An Aussie-based GoHighLevel agency that builds and runs the backend so you can focus on your business." />
+  <meta property="og:title" content="DMHQ — GoHighLevel Agency" />
+  <meta property="og:description" content="An Aussie-based GoHighLevel agency that builds and runs the backend so you can focus on your business." />
+  <meta property="og:image" content="https://dmhq.ai/images/fabian-avatar.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: rgba(255,255,255,0.08);
+      --text: #ccc9c4;
+      --muted: rgba(255,255,255,0.45);
+      --grad: linear-gradient(135deg, #DB3EB1, #41B6E6);
+    }
+
+    html { color-scheme: dark; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    img { max-width: 100%; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 50;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-ghost {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--text); }
+    .btn-primary {
+      background: var(--grad);
+      border: none;
+      color: #fff;
+      padding: 9px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+
+    /* ─── HERO ─── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      flex-shrink: 0;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-lg {
+      padding: 13px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    /* ─── COMPARISON ─── */
+    .compare-section {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 700px) {
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    .compare-col {
+      padding: 36px 32px;
+    }
+    .compare-col.dark-side {
+      background: #111;
+      border-right: 1px solid var(--border);
+    }
+    @media (max-width: 700px) {
+      .compare-col.dark-side { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+    .compare-col.light-side {
+      background: #fff;
+    }
+    .compare-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .dark-side .compare-label { color: rgba(255,255,255,0.3); }
+    .light-side .compare-label {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .compare-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      object-fit: cover;
+    }
+    .light-side .compare-img {
+      background: #f0f0f0;
+      border-color: #e0e0e0;
+    }
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .compare-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .item-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dark-side .item-icon {
+      background: rgba(255,255,255,0.07);
+    }
+    .light-side .item-icon {
+      background: #ecfdf5;
+    }
+    .icon-x { color: rgba(255,255,255,0.35); font-size: 10px; }
+    .icon-check { color: #16a34a; font-size: 10px; font-weight: 700; }
+    .item-text { font-size: 14px; line-height: 1.5; }
+    .dark-side .item-text { color: rgba(255,255,255,0.55); }
+    .light-side .item-text { color: #374151; }
+    .item-text strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .dark-side .item-text strong { color: rgba(255,255,255,0.75); }
+    .light-side .item-text strong { color: #111827; }
+
+    /* ─── CTA SECTION ─── */
+    .cta-section {
+      text-align: center;
+      padding: 80px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-inner { max-width: 760px; margin: 0 auto; }
+    .cta-section h2 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-section p {
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 36px;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-section {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .faq-section h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      cursor: pointer;
+      text-align: left;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.15s;
+    }
+    .faq-question:hover { background: rgba(255,255,255,0.03); }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--muted);
+      transition: transform 0.25s, background 0.15s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(255,255,255,0.06);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 20px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    footer a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="/">
+        <div class="logo-mark">D</div>
+        <span class="logo-text">DMHQ</span>
+      </a>
+      <div class="nav-right">
+        <a class="btn-ghost" href="https://dmhq.ai" target="_blank" rel="noopener">dmhq.ai</a>
+        <a class="btn-primary" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Client Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Aussie-based GoHighLevel agency
+    </div>
+    <h1>GoHighLevel, <span>done for you.</span></h1>
+    <p>We build and run the backend so you can focus on the business. No ticket queues, no freelancer churn — just a local team inside GHL every day.</p>
+    <div class="hero-actions">
+      <a class="btn-primary btn-lg" href="https://dmhq.ai" target="_blank" rel="noopener">Work with us</a>
+      <a class="btn-ghost btn-lg" href="https://app.gohighlevel.com/" target="_blank" rel="noopener">Client login</a>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="compare-section">
+    <div class="compare-grid">
+      <!-- Left: GHL on your own -->
+      <div class="compare-col dark-side">
+        <div class="compare-label">GHL on your own</div>
+        <div class="compare-img"></div>
+        <ul class="compare-list">
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-x">✕</span></div>
+            <div class="item-text"><strong>Slow to start.</strong> You are learning the platform from scratch while the work piles up.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-x">✕</span></div>
+            <div class="item-text"><strong>Long learning curve.</strong> Weeks of trial and error before anything runs the way it should.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-x">✕</span></div>
+            <div class="item-text"><strong>Thin support.</strong> When something breaks you wait on a ticket queue and generic help docs.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-x">✕</span></div>
+            <div class="item-text"><strong>The freelancer treadmill.</strong> You hire, explain your whole business, they disappear, and you start again. Time and money gone each time.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: With DMHQ -->
+      <div class="compare-col light-side">
+        <div class="compare-label">With an Aussie based GHL agency</div>
+        <div class="compare-img"></div>
+        <ul class="compare-list">
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-check">✓</span></div>
+            <div class="item-text"><strong>Dedicated chat channel, open 24/7.</strong> Message us directly and get answers, not a support ticket.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-check">✓</span></div>
+            <div class="item-text"><strong>Fast turnaround.</strong> Builds and fixes move quickly because we work inside GoHighLevel every day.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-check">✓</span></div>
+            <div class="item-text"><strong>Custom solutions.</strong> Systems built around how your business actually runs, not a recycled template.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-check">✓</span></div>
+            <div class="item-text"><strong>Long term frameworks.</strong> We learn your business and build backend systems made to scale.</div>
+          </li>
+          <li class="compare-item">
+            <div class="item-icon"><span class="icon-check">✓</span></div>
+            <div class="item-text"><strong>Backing a local business.</strong> Your spend supports an Australian operator instead of a US company you already pay fees to.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2>Going it alone with GoHighLevel, or going with an Aussie agency that runs the backend for you.</h2>
+      <p>GoHighLevel is powerful once it is set up properly. The question is whether you want to spend weeks learning it yourself, or have a local team build and run it while you focus on the business.</p>
+      <a class="btn-primary btn-lg" href="https://dmhq.ai" target="_blank" rel="noopener">Get started with DMHQ</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Common questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What if it does not work out?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">GoHighLevel can eject your sub account into your own GoHighLevel account in a matter of minutes. We include this transfer in our agreement, so you are never locked in and you keep everything we have built.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do I need my own GoHighLevel subscription?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. We operate as a GHL agency, which means your business runs as a sub-account under our account. This keeps your setup costs lower and lets us work directly inside your account without you needing to manage a separate subscription.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Who owns my data and contacts?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">You do, always. Your contacts, pipelines, automations, and anything else we build inside your sub-account belong to you. If you ever leave, they come with you — that is written into our agreement.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          I already have a GoHighLevel account. Can you still help?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. We can work directly inside your existing GHL account as a collaborator and build or clean up whatever you need — no migration required.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are you actually based in Australia?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, we are based in Perth, Western Australia. When you message us you are talking to the same people who build and manage your systems — not a support rep reading from a script.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Am I locked into a long contract?
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No long-term lock-in. We work on a rolling monthly basis. If something changes in your business, you can pause or cancel with reasonable notice. We want to keep clients because the work is good, not because of a contract.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 DMHQ &nbsp;·&nbsp; <a href="https://dmhq.ai">dmhq.ai</a></p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
