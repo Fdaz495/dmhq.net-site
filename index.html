@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>DMHQ — GoHighLevel Agency</title>
+  <title>DMHQ | Aussie GoHighLevel agency</title>
   <meta name="description" content="An Aussie-based GoHighLevel agency that builds and runs the backend so you can focus on your business." />
-  <meta property="og:title" content="DMHQ — GoHighLevel Agency" />
+  <meta property="og:title" content="DMHQ | Aussie GoHighLevel agency" />
   <meta property="og:description" content="An Aussie-based GoHighLevel agency that builds and runs the backend so you can focus on your business." />
   <meta property="og:image" content="https://dmhq.ai/images/fabian-avatar.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -375,13 +375,14 @@
     }
     .clients-label {
       text-align: center;
-      font-family: "Inter", sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+      font-family: "Unica One", sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 28px;
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 36px;
     }
     .clients-mask {
       overflow: hidden;
@@ -400,6 +401,8 @@
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
+    a.client-card { text-decoration: none; }
+    a.client-card:hover .client-card-label span { color: rgba(255,255,255,1); }
     .client-card {
       flex-shrink: 0;
       width: 220px;
@@ -494,9 +497,9 @@
   <section class="hero">
     <div class="eyebrow">Aussie-based GoHighLevel agency</div>
     <h1>GoHighLevel, <span class="grad-text">done for you.</span></h1>
-    <p>We build and run the backend. You get on with running the business. There's no ticket queue and no rotating cast of freelancers, just a local team working in your GHL.</p>
+    <p>We build and run the backend in your GHL so you can run the business. You work with one local team instead of a ticket queue or a string of freelancers.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary btn-lg" href="/contact">Get in Touch →</a>
+      <a class="btn btn-primary btn-lg" href="/contact">Get in touch →</a>
       <a class="btn btn-outline btn-lg" href="https://app.dmhq.net/" target="_blank" rel="noopener">Login</a>
     </div>
   </section>
@@ -525,21 +528,21 @@
           </li>
           <li class="compare-item">
             <div class="item-icon">✕</div>
-            <div class="item-text"><strong>The freelancer treadmill.</strong> You hire, explain your whole business, they disappear, and you start again. Time and money gone each time.</div>
+            <div class="item-text"><strong>The freelancer treadmill.</strong> You hire, explain your whole business, they disappear, and you start again. You lose time and money every round.</div>
           </li>
         </ul>
       </div>
 
       <!-- Right: With DMHQ -->
       <div class="compare-col light-side">
-        <div class="compare-label">With an Aussie based GHL agency</div>
+        <div class="compare-label">With an Aussie-based GHL agency</div>
         <div class="compare-video-wrap">
           <video class="hover-video" src="fast.mp4" muted playsinline loop preload="metadata"></video>
         </div>
         <ul class="compare-list">
           <li class="compare-item">
             <div class="item-icon">✓</div>
-            <div class="item-text"><strong>Dedicated chat channel, open 24/7.</strong> Message us directly and get answers, not a support ticket.</div>
+            <div class="item-text"><strong>Dedicated chat channel, open 24/7.</strong> Message us directly. The people who build your system reply.</div>
           </li>
           <li class="compare-item">
             <div class="item-icon">✓</div>
@@ -547,11 +550,11 @@
           </li>
           <li class="compare-item">
             <div class="item-icon">✓</div>
-            <div class="item-text"><strong>Custom solutions.</strong> Systems built around how your business actually runs, not a recycled template.</div>
+            <div class="item-text"><strong>Custom solutions.</strong> We build each system around how your business runs instead of copying a template.</div>
           </li>
           <li class="compare-item">
             <div class="item-icon">✓</div>
-            <div class="item-text"><strong>Long term frameworks.</strong> We learn your business and build backend systems made to scale.</div>
+            <div class="item-text"><strong>Built for the long term.</strong> We learn your business and build backend systems that grow with it.</div>
           </li>
           <li class="compare-item">
             <div class="item-icon">✓</div>
@@ -564,24 +567,28 @@
 
   <!-- CLIENT TICKER -->
   <section class="clients-section">
-    <p class="clients-label">Live on GHL with DMHQ</p>
+    <h2 class="clients-label">Live on GHL with DMHQ</h2>
     <div class="clients-mask">
       <div class="clients-track">
-        <div class="client-card"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></div>
-        <div class="client-card"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></div>
-        <div class="client-card"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></div>
-        <div class="client-card"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></div>
-        <div class="client-card"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></div>
+        <a class="client-card" href="https://stricket.app/" target="_blank" rel="noopener"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></a>
+        <a class="client-card" href="https://luxebus.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></a>
+        <a class="client-card" href="https://altonegroup.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></a>
+        <a class="client-card" href="https://perthrhinos.au/" target="_blank" rel="noopener"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></a>
+        <a class="client-card" href="https://streeteatseatery.com/" target="_blank" rel="noopener"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></a>
         <div class="client-card"><img src="images/portfolio/thinkiyo.jpg" alt="Thinkiyo" /><div class="client-card-label"><span>Thinkiyo</span></div></div>
-        <div class="client-card"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></div>
+        <a class="client-card" href="https://providencefinancial.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></a>
+        <a class="client-card" href="https://mattsmarineservices.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/mattsmarineservices.png" alt="Matt's Marine Services" /><div class="client-card-label"><span>Matt's Marine</span></div></a>
+        <a class="client-card" href="https://cottonsmowing.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/cottonsmowing.png" alt="Cotton's Mowing" /><div class="client-card-label"><span>Cotton's Mowing</span></div></a>
         <!-- duplicate for seamless loop -->
-        <div class="client-card"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></div>
-        <div class="client-card"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></div>
-        <div class="client-card"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></div>
-        <div class="client-card"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></div>
-        <div class="client-card"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></div>
+        <a class="client-card" href="https://stricket.app/" target="_blank" rel="noopener"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></a>
+        <a class="client-card" href="https://luxebus.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/luxebus.jpg" alt="Luxe Bus" /><div class="client-card-label"><span>Luxe Bus</span></div></a>
+        <a class="client-card" href="https://altonegroup.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/altone-group.jpg" alt="Altone Group" /><div class="client-card-label"><span>Altone Group</span></div></a>
+        <a class="client-card" href="https://perthrhinos.au/" target="_blank" rel="noopener"><img src="images/portfolio/perth-rhinos.jpg" alt="Perth Rhinos" /><div class="client-card-label"><span>Perth Rhinos</span></div></a>
+        <a class="client-card" href="https://streeteatseatery.com/" target="_blank" rel="noopener"><img src="images/portfolio/street-eats.jpg" alt="Street Eats" /><div class="client-card-label"><span>Street Eats</span></div></a>
         <div class="client-card"><img src="images/portfolio/thinkiyo.jpg" alt="Thinkiyo" /><div class="client-card-label"><span>Thinkiyo</span></div></div>
-        <div class="client-card"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></div>
+        <a class="client-card" href="https://providencefinancial.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></a>
+        <a class="client-card" href="https://mattsmarineservices.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/mattsmarineservices.png" alt="Matt's Marine Services" /><div class="client-card-label"><span>Matt's Marine</span></div></a>
+        <a class="client-card" href="https://cottonsmowing.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/cottonsmowing.png" alt="Cotton's Mowing" /><div class="client-card-label"><span>Cotton's Mowing</span></div></a>
       </div>
     </div>
   </section>
@@ -589,9 +596,9 @@
   <!-- CTA SECTION -->
   <section class="cta-section">
     <div class="cta-inner">
-      <h2>Going it alone with GoHighLevel, or going with an Aussie agency that runs the backend for you.</h2>
-      <p>GoHighLevel is powerful once it is set up properly. The question is whether you want to spend weeks learning it yourself, or have a local team build and run it while you focus on the business.</p>
-      <a class="btn btn-primary btn-lg" href="/contact">Get in Touch →</a>
+      <h2>Learn GoHighLevel yourself, or have us run it</h2>
+      <p>GoHighLevel works well once it is set up properly. You can spend weeks learning it yourself, or have a local team build and run it while you focus on the business.</p>
+      <a class="btn btn-primary btn-lg" href="/contact">Get in touch →</a>
     </div>
   </section>
 
@@ -606,7 +613,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">GoHighLevel can eject your sub account into your own GoHighLevel account in a matter of minutes. We include this transfer in our agreement, so you are never locked in and you keep everything we have built.</div>
+          <div class="faq-answer-inner">GoHighLevel can move your sub-account into your own GoHighLevel account in minutes. This transfer is part of our agreement, so you keep everything we built and you are never locked in.</div>
         </div>
       </div>
 
@@ -626,7 +633,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">You do, always. Your contacts, pipelines, automations, and anything else we build inside your sub-account belong to you. If you ever leave, they come with you — that is written into our agreement.</div>
+          <div class="faq-answer-inner">You do, always. Your contacts, pipelines, automations, and anything else we build inside your sub-account belong to you. If you leave, they come with you. Our agreement says so in writing.</div>
         </div>
       </div>
 
@@ -636,7 +643,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Yes. We can work directly inside your existing GHL account as a collaborator and build or clean up whatever you need — no migration required.</div>
+          <div class="faq-answer-inner">Yes. We can work directly inside your existing GHL account as a collaborator and build or clean up whatever you need. You don't need to migrate anything.</div>
         </div>
       </div>
 
@@ -646,7 +653,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Yes, we are based in Perth, Western Australia. When you message us you are talking to the same people who build and manage your systems — not a support rep reading from a script.</div>
+          <div class="faq-answer-inner">Yes, we are based in Perth, Western Australia. When you message us, you talk to the same people who build and manage your systems.</div>
         </div>
       </div>
 
@@ -656,7 +663,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">No long-term lock-in. We work on a rolling monthly basis. If something changes in your business, you can pause or cancel with reasonable notice. We want to keep clients because the work is good, not because of a contract.</div>
+          <div class="faq-answer-inner">There is no long-term lock-in. We work month to month. If something changes in your business, you can pause or cancel with reasonable notice. We keep clients by doing good work.</div>
         </div>
       </div>
 
