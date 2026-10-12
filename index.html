@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&family=Unica+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.css" />
   <script
     src="https://link.dmhq.net/js/external-tracking.js"
     data-tracking-id="tk_e68244242b8b485692420824e2b50660">
@@ -435,6 +436,40 @@
       display: block;
     }
 
+    /* ─── TESTIMONIAL VIDEO ─── */
+    .testimonial-section {
+      padding: 80px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .testimonial-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .testimonial-inner h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      color: var(--white);
+      margin-bottom: 40px;
+    }
+    .testimonial-video-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #000;
+      --plyr-color-main: #DB3EB1;
+      --plyr-video-control-color: #fff;
+      --plyr-video-control-background-hover: rgba(219,62,177,0.75);
+      --plyr-range-fill-background: linear-gradient(135deg,#DB3EB1,#41B6E6);
+      --plyr-border-radius: 20px;
+    }
+    .testimonial-credit {
+      margin-top: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
     /* ─── REVIEWS ─── */
     .reviews-section {
       padding: 80px 24px;
@@ -566,6 +601,19 @@
     </div>
   </section>
 
+  <!-- VIDEO TESTIMONIAL -->
+  <section class="testimonial-section">
+    <div class="testimonial-inner">
+      <h2>Hear from a client</h2>
+      <div class="testimonial-video-wrap">
+        <video id="testimonial-video" playsinline controls>
+          <source src="Videos/studio-servan-testimonial.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="testimonial-credit">Studio Servan</p>
+    </div>
+  </section>
+
   <!-- REVIEWS -->
   <section class="reviews-section">
     <div class="reviews-inner">
@@ -687,7 +735,14 @@
     <p>© 2026 DMHQ &nbsp;·&nbsp; <a href="https://dmhq.ai">dmhq.ai</a></p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"></script>
   <script>
+    // Plyr testimonial video
+    new Plyr('#testimonial-video', {
+      controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+      resetOnEnd: true,
+    });
+
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
