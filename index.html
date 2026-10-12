@@ -455,11 +455,17 @@
       border-radius: 20px;
       overflow: hidden;
       background: #000;
+      max-width: 420px;
+      margin: 0 auto;
+      aspect-ratio: 9/16;
       --plyr-color-main: #DB3EB1;
       --plyr-video-control-color: #fff;
       --plyr-video-control-background-hover: rgba(219,62,177,0.75);
       --plyr-range-fill-background: linear-gradient(135deg,#DB3EB1,#41B6E6);
       --plyr-border-radius: 20px;
+    }
+    @media (max-width: 500px) {
+      .testimonial-video-wrap { max-width: 100%; border-radius: 12px; }
     }
     .testimonial-credit {
       margin-top: 20px;
