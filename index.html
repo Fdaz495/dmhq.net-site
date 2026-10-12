@@ -449,11 +449,19 @@
     }
     .reviews-widget-wrap {
       width: 100%;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #0d0d0d;
+      /* clip any white borders the iframe container renders */
+      isolation: isolate;
     }
     .reviews-widget-wrap iframe {
-      border: none;
+      border: none !important;
+      outline: none;
       width: 100%;
       min-width: 100%;
+      display: block;
+      background: #0d0d0d;
     }
 
     /* ─── FOOTER ─── */
