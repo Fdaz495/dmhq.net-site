@@ -436,6 +436,116 @@
       display: block;
     }
 
+    /* ─── PRICING ─── */
+    .pricing-section {
+      padding: 96px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .pricing-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .pricing-section > .pricing-inner > h2 {
+      text-align: center;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .pricing-sub {
+      text-align: center;
+      font-size: 16px;
+      color: var(--gray-400);
+      margin-bottom: 56px;
+      line-height: 1.6;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
+    .pricing-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px 32px;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card.featured {
+      background: linear-gradient(#0d0d0d, #0d0d0d) padding-box,
+                  linear-gradient(135deg, #DB3EB1, #41B6E6) border-box;
+      border: 1px solid transparent;
+    }
+    @media (max-width: 700px) { .pricing-card { padding: 28px 24px; } }
+    .pricing-plan-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 20px;
+    }
+    .pricing-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .pricing-currency { font-size: 1.4rem; font-weight: 700; color: rgba(255,255,255,0.5); line-height: 1; }
+    .pricing-number {
+      font-family: "Unica One", sans-serif;
+      font-size: clamp(3rem, 6vw, 3.75rem);
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .pricing-period { font-size: 14px; color: var(--gray-400); padding-bottom: 4px; }
+    .pricing-setup {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 28px;
+    }
+    .pricing-setup strong { color: rgba(255,255,255,0.65); }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 24px;
+    }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      margin-bottom: 32px;
+    }
+    .pricing-feature {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .pricing-check {
+      color: var(--pink);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .pricing-cta {
+      display: block;
+      text-align: center;
+    }
+
     /* ─── TESTIMONIAL VIDEO ─── */
     .testimonial-section {
       padding: 80px 24px;
@@ -655,6 +765,59 @@
         <a class="client-card" href="https://providencefinancial.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/providence-financial.jpg" alt="Providence Financial" /><div class="client-card-label"><span>Providence Financial</span></div></a>
         <a class="client-card" href="https://mattsmarineservices.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/mattsmarineservices.png" alt="Matt's Marine Services" /><div class="client-card-label"><span>Matt's Marine</span></div></a>
         <a class="client-card" href="https://cottonsmowing.com.au/" target="_blank" rel="noopener"><img src="images/portfolio/cottonsmowing.png" alt="Cotton's Mowing" /><div class="client-card-label"><span>Cotton's Mowing</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <h2>Simple pricing</h2>
+      <p class="pricing-sub">Both plans are $150 AUD per month. The difference is how you sit within GoHighLevel.</p>
+      <div class="pricing-grid">
+
+        <!-- Support -->
+        <div class="pricing-card">
+          <div class="pricing-plan-label">Support</div>
+          <div class="pricing-amount">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-number">150</span>
+            <span class="pricing-period">AUD / month</span>
+          </div>
+          <p class="pricing-setup"><strong>$1,000 setup fee</strong> · one time</p>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Dedicated chat channel, open 24/7</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Fast turnaround on builds and fixes</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Systems built around your business</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Backend built for the long term</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> You keep your existing GHL account</li>
+          </ul>
+          <p class="pricing-note">In addition to your existing GHL software subscription.</p>
+          <a class="btn btn-outline btn-lg pricing-cta" href="/contact">Get started</a>
+        </div>
+
+        <!-- Agency -->
+        <div class="pricing-card featured">
+          <div class="pricing-plan-label">Agency</div>
+          <div class="pricing-amount">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-number">150</span>
+            <span class="pricing-period">AUD / month</span>
+          </div>
+          <p class="pricing-setup">No setup fee</p>
+          <hr class="pricing-divider" />
+          <ul class="pricing-features">
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Everything in Support</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Run under DMHQ agency branding</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> No separate GHL subscription needed</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> All ongoing system work covered</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> Additional work quoted separately</li>
+          </ul>
+          <p class="pricing-note">Your GHL subscription is included. No extra software costs.</p>
+          <a class="btn btn-primary btn-lg pricing-cta" href="/contact">Get started</a>
+        </div>
+
       </div>
     </div>
   </section>
