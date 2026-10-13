@@ -229,15 +229,11 @@
 
     /* Eyebrow label inside comparison — use brand eyebrow spec */
     .compare-label {
-      font-family: "Inter", sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       margin-bottom: 20px;
     }
-    .dark-side .compare-label { color: rgba(255,255,255,0.3); }
-    .light-side .compare-label { color: var(--pink); }
+    .dark-side .compare-label { color: rgba(255,255,255,0.55); }
+    .light-side .compare-label { color: #111827; }
 
     /* Video */
     .compare-video-wrap {
@@ -658,7 +654,7 @@
   <section class="hero">
     <div class="eyebrow">Aussie-based GoHighLevel agency</div>
     <h1>GoHighLevel, <span class="grad-text">done for you.</span></h1>
-    <p>We build and run the backend in your GHL so you can run the business. You work with one local team instead of a ticket queue or a string of freelancers.</p>
+    <p>We build and run the backend in your GoHighLevel so you can run the business. You work with one local team instead of a ticket queue or a string of freelancers.</p>
     <div class="hero-actions">
       <a class="btn btn-primary btn-lg" href="/contact">Get in touch →</a>
       <a class="btn btn-outline btn-lg" href="https://app.dmhq.net/" target="_blank" rel="noopener">Login</a>
@@ -670,7 +666,7 @@
     <div class="compare-grid">
       <!-- Left: GHL on your own -->
       <div class="compare-col dark-side">
-        <div class="compare-label">GHL on your own</div>
+        <h3 class="compare-label">GoHighLevel on your own</h3>
         <div class="compare-video-wrap">
           <video class="hover-video" src="videos/slow.mp4" muted playsinline loop preload="metadata"></video>
         </div>
@@ -696,7 +692,7 @@
 
       <!-- Right: With DMHQ -->
       <div class="compare-col light-side">
-        <div class="compare-label">With an Aussie-based GHL agency</div>
+        <h3 class="compare-label">Aussie-based GoHighLevel agency</h3>
         <div class="compare-video-wrap">
           <video class="hover-video" src="videos/fast.mp4" muted playsinline loop preload="metadata"></video>
         </div>
@@ -752,7 +748,7 @@
 
   <!-- CLIENT TICKER -->
   <section class="clients-section">
-    <h2 class="clients-label">Live on GHL with DMHQ</h2>
+    <h2 class="clients-label">Live on GoHighLevel with DMHQ</h2>
     <div class="clients-mask">
       <div class="clients-track">
         <a class="client-card" href="https://stricket.app/" target="_blank" rel="noopener"><img src="images/portfolio/stricket.jpg" alt="Stricket" /><div class="client-card-label"><span>Stricket</span></div></a>
@@ -800,9 +796,9 @@
             <li class="pricing-feature"><span class="pricing-check">✓</span> Fast turnaround on builds and fixes</li>
             <li class="pricing-feature"><span class="pricing-check">✓</span> Systems built around your business</li>
             <li class="pricing-feature"><span class="pricing-check">✓</span> Backend built for the long term</li>
-            <li class="pricing-feature"><span class="pricing-check">✓</span> You keep your existing GHL account</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> You keep your existing GoHighLevel account</li>
           </ul>
-          <p class="pricing-note">In addition to your existing GHL software subscription.</p>
+          <p class="pricing-note">In addition to your existing GoHighLevel software subscription.</p>
           <a class="btn btn-outline btn-lg pricing-cta" href="/contact">Get started</a>
         </div>
 
@@ -819,11 +815,11 @@
           <ul class="pricing-features">
             <li class="pricing-feature"><span class="pricing-check">✓</span> Everything in Support</li>
             <li class="pricing-feature"><span class="pricing-check">✓</span> Run under DMHQ agency branding</li>
-            <li class="pricing-feature"><span class="pricing-check">✓</span> No separate GHL subscription needed</li>
+            <li class="pricing-feature"><span class="pricing-check">✓</span> No separate GoHighLevel subscription needed</li>
             <li class="pricing-feature"><span class="pricing-check">✓</span> All ongoing system work covered</li>
             <li class="pricing-feature"><span class="pricing-check">✓</span> Additional work covered by a SOW</li>
           </ul>
-          <p class="pricing-note pricing-note--highlight">GHL subscription included. No extra software costs.</p>
+          <p class="pricing-note pricing-note--highlight">GoHighLevel subscription included. No extra software costs.</p>
           <a class="btn btn-primary btn-lg pricing-cta" href="/contact">Get started</a>
         </div>
 
@@ -861,7 +857,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">No. We operate as a GHL agency, which means your business runs as a sub-account under our account. This keeps your setup costs lower and lets us work directly inside your account without you needing to manage a separate subscription.</div>
+          <div class="faq-answer-inner">No. We operate as a GoHighLevel agency, which means your business runs as a sub-account under our account. This keeps your setup costs lower and lets us work directly inside your account without you needing to manage a separate subscription.</div>
         </div>
       </div>
 
@@ -881,7 +877,7 @@
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Yes. We can work directly inside your existing GHL account as a collaborator and build or clean up whatever you need. You don't need to migrate anything.</div>
+          <div class="faq-answer-inner">Yes. We can work directly inside your existing GoHighLevel account as a collaborator and build or clean up whatever you need. You don't need to migrate anything.</div>
         </div>
       </div>
 
