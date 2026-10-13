@@ -54,7 +54,10 @@
     }
 
 
-    html { color-scheme: dark; }
+    html {
+      color-scheme: dark;
+      overflow-x: hidden; /* prevent any element from causing horizontal scroll */
+    }
 
     body {
       background: var(--black);
@@ -63,6 +66,7 @@
       font-size: 15px;
       line-height: 1.6;
       min-height: 100vh;
+      overflow-x: hidden;
       padding-top: env(safe-area-inset-top, 0px);
       padding-bottom: env(safe-area-inset-bottom, 0px);
     }
@@ -155,6 +159,7 @@
     /* ─── HERO ─── */
     .hero-section {
       position: relative;
+      overflow: hidden; /* clip orbs and iso-grid — prevents horizontal scroll */
       min-height: calc(100vh - 64px);
       display: flex;
       align-items: center;
@@ -510,8 +515,8 @@
       position: absolute;
       inset-x: 0;
       bottom: 0;
-      padding: 20px 12px 10px;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+      padding: 28px 12px 10px;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
     }
     .client-card-label span {
       font-family: "Inter", sans-serif;
@@ -721,6 +726,64 @@
     }
     footer a { color: rgba(255,255,255,0.3); text-decoration: none; }
     footer a:hover { color: var(--gray-400); }
+
+    /* ─── MOBILE / RESPONSIVE ─── */
+
+    /* Nav: hide text links on narrow screens, keep logo + login */
+    @media (max-width: 520px) {
+      .nav-link { display: none; }
+      .nav-inner { padding: 0 16px; }
+    }
+
+    /* Hero: tighter vertical padding, capped heading */
+    @media (max-width: 520px) {
+      .hero { padding: 56px 20px 56px; }
+      .hero h1 { font-size: clamp(1.9rem, 8vw, 2.5rem); }
+      .hero p { font-size: 15px; }
+      .eyebrow { font-size: 10px; letter-spacing: 1px; }
+    }
+
+    /* Comparison: tighter desktop padding, already 1-col at 700px */
+    @media (max-width: 520px) {
+      .compare-section { padding: 0 16px; margin-bottom: 48px; }
+      .compare-col { padding: 24px 20px; }
+    }
+
+    /* Ticker: add side padding to heading so it doesn't clip */
+    .clients-label { padding-inline: 20px; }
+    @media (max-width: 520px) {
+      .clients-section { padding: 48px 0; }
+      .clients-label { font-size: clamp(1.4rem, 6vw, 1.75rem); }
+    }
+
+    /* Sections: reduce 96px vertical padding on mobile */
+    @media (max-width: 520px) {
+      .testimonial-section { padding: 56px 20px; }
+      .reviews-section     { padding: 56px 16px; }
+      .pricing-section     { padding: 56px 16px; }
+      .cta-section         { padding: 56px 20px; }
+      .faq-section         { padding: 56px 20px; }
+    }
+
+    /* Pricing: full-width on mobile already via grid, ensure card doesn't overflow */
+    @media (max-width: 520px) {
+      .pricing-card { padding: 24px 20px; }
+      .pricing-number { font-size: clamp(2.5rem, 10vw, 3.25rem); }
+    }
+
+    /* Testimonial: constrain on small screens */
+    @media (max-width: 380px) {
+      .testimonial-video-wrap { max-width: 100%; }
+    }
+
+    /* CTA heading: prevent wrapping awkwardly on mid-sizes */
+    @media (max-width: 600px) {
+      .cta-section h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+      .cta-section p  { font-size: 15px; }
+    }
+
+    /* Reviews iframe: never wider than viewport */
+    .reviews-widget-wrap iframe { max-width: 100%; }
   </style>
 </head>
 <body>
