@@ -155,10 +155,19 @@
     /* ─── HERO ─── */
     .hero-section {
       position: relative;
-      overflow: hidden;
       min-height: calc(100vh - 64px);
       display: flex;
       align-items: center;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      bottom: 0;
+      height: 180px;
+      background: linear-gradient(to bottom, transparent 0%, #0A0A0A 100%);
+      pointer-events: none;
+      z-index: 2;
     }
     .hero-bg {
       position: absolute;
@@ -205,8 +214,8 @@
           transparent 1px,
           transparent 44px
         );
-      -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 25%, transparent 100%);
-      mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 25%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 60% at 50% 40%, black 20%, transparent 90%);
+      mask-image: radial-gradient(ellipse 85% 60% at 50% 40%, black 20%, transparent 90%);
       animation: iso-drift 36s linear infinite;
     }
     @keyframes iso-drift {
