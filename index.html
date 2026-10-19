@@ -411,7 +411,7 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     .setup-inner {
-      max-width: 1100px;
+      max-width: 860px;
       margin: 0 auto;
     }
     .setup-inner .eyebrow { text-align: center; margin-bottom: 16px; }
@@ -425,40 +425,35 @@
       font-size: 16px;
       color: var(--gray-400);
       text-align: center;
-      max-width: 600px;
+      max-width: 560px;
       margin: 0 auto 56px;
       line-height: 1.65;
     }
-    .setup-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 48px;
+    .setup-list {
+      list-style: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 56px;
     }
-    .setup-item {
-      flex: 0 1 calc(33.333% - 14px);
-      min-width: 220px;
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 28px 24px;
+    .setup-row {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 0 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      align-items: start;
     }
-    @media (max-width: 700px) { .setup-item { flex: 0 1 100%; } }
-    .setup-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--grad);
+    @media (min-width: 640px) {
+      .setup-row { grid-template-columns: 36px 160px 1fr; }
+    }
+    .setup-num {
       font-family: "Unica One", sans-serif;
-      font-size: 19px;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 20px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding-top: 2px;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .setup-title {
       font-family: "Inter", sans-serif;
@@ -466,15 +461,18 @@
       font-weight: 700;
       text-transform: none;
       letter-spacing: 0;
-      line-height: 1.3;
+      line-height: 1.45;
       color: var(--white);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
+    @media (min-width: 640px) { .setup-title { margin-bottom: 0; padding-top: 1px; } }
     .setup-desc {
       font-size: 14px;
       color: var(--gray-400);
       line-height: 1.6;
+      grid-column: 2;
     }
+    @media (min-width: 640px) { .setup-desc { grid-column: 3; } }
 
     /* ─── FAQ ─── */
     .faq-section {
@@ -847,8 +845,9 @@
       .testimonial-section { padding: 56px 20px; }
       .reviews-section     { padding: 56px 16px; }
       .pricing-section     { padding: 56px 16px; }
-      .contact-section     { padding: 56px 20px; }
-      .setup-section       { padding: 56px 16px; }
+      .contact-section { padding: 56px 20px; }
+      .setup-section   { padding: 56px 20px; }
+      .setup-row       { gap: 0 16px; }
       .faq-section         { padding: 56px 20px; }
     }
 
@@ -1113,33 +1112,33 @@
       <div class="eyebrow">What's included in your setup</div>
       <h2>Five things built <span class="grad-text">before day one</span></h2>
       <p class="setup-intro">Every setup includes these five components configured to your business, so the system is running when you go live.</p>
-      <div class="setup-grid">
-        <div class="setup-item">
-          <span class="setup-icon">C</span>
+      <ul class="setup-list">
+        <li class="setup-row">
+          <span class="setup-num">01</span>
           <div class="setup-title">Calendar</div>
           <p class="setup-desc">Booking automations with salesperson calendars connected to avoid double-bookings.</p>
-        </div>
-        <div class="setup-item">
-          <span class="setup-icon">F</span>
+        </li>
+        <li class="setup-row">
+          <span class="setup-num">02</span>
           <div class="setup-title">Forms</div>
           <p class="setup-desc">Qualifying forms for your three services: paid ads, email marketing and social media.</p>
-        </div>
-        <div class="setup-item">
-          <span class="setup-icon">E</span>
+        </li>
+        <li class="setup-row">
+          <span class="setup-num">03</span>
           <div class="setup-title">Email</div>
           <p class="setup-desc">Meeting reminders and post-meeting follow-up sequences sent automatically.</p>
-        </div>
-        <div class="setup-item">
-          <span class="setup-icon">P</span>
+        </li>
+        <li class="setup-row">
+          <span class="setup-num">04</span>
           <div class="setup-title">Pipeline</div>
           <p class="setup-desc">Sales pipeline with stages matched to your sales process from first contact to close.</p>
-        </div>
-        <div class="setup-item">
-          <span class="setup-icon">T</span>
+        </li>
+        <li class="setup-row">
+          <span class="setup-num">05</span>
           <div class="setup-title">Training</div>
           <p class="setup-desc">Custom video walkthroughs for your team so the system is easy to use from day one.</p>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div class="section-cta-wrap">
         <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
       </div>
