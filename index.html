@@ -18,6 +18,7 @@
     src="https://link.dmhq.net/js/external-tracking.js"
     data-tracking-id="tk_e68244242b8b485692420824e2b50660">
   </script>
+  <script src="https://link.dmhq.net/js/form_embed.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -370,24 +371,109 @@
     .dark-side .item-text strong { color: rgba(255,255,255,0.75); }
     .light-side .item-text strong { color: #111827; }
 
-    /* ─── CTA SECTION ─── */
-    .cta-section {
-      text-align: center;
+    /* ─── CONTACT SECTION ─── */
+    .contact-section {
       padding: 96px 24px;
       border-top: 1px solid rgba(255,255,255,0.08);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .cta-inner { max-width: 760px; margin: 0 auto; }
-    .cta-section h2 {
+    .contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-inner h2 {
       font-size: clamp(1.75rem, 4vw, 2.75rem);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .contact-inner > p {
+      font-size: 17px;
+      color: var(--gray-400);
+      margin-bottom: 48px;
+      line-height: 1.65;
+    }
+    .contact-form-wrap iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ─── SECTION CTA ─── */
+    .section-cta-wrap {
+      text-align: center;
+      padding-top: 48px;
+    }
+
+    /* ─── SETUP INCLUDES ─── */
+    .setup-section {
+      padding: 96px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .setup-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .setup-inner .eyebrow { text-align: center; margin-bottom: 16px; }
+    .setup-inner > h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .setup-intro {
+      font-size: 16px;
+      color: var(--gray-400);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 56px;
+      line-height: 1.65;
+    }
+    .setup-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .setup-item {
+      flex: 0 1 calc(33.333% - 14px);
+      min-width: 220px;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+    }
+    @media (max-width: 700px) { .setup-item { flex: 0 1 100%; } }
+    .setup-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--grad);
+      font-family: "Unica One", sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      text-transform: uppercase;
       color: var(--white);
       margin-bottom: 20px;
     }
-    .cta-section p {
-      font-size: 17px;
+    .setup-title {
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+      line-height: 1.3;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .setup-desc {
+      font-size: 14px;
       color: var(--gray-400);
-      margin-bottom: 40px;
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
     /* ─── FAQ ─── */
@@ -761,7 +847,8 @@
       .testimonial-section { padding: 56px 20px; }
       .reviews-section     { padding: 56px 16px; }
       .pricing-section     { padding: 56px 16px; }
-      .cta-section         { padding: 56px 20px; }
+      .contact-section     { padding: 56px 20px; }
+      .setup-section       { padding: 56px 16px; }
       .faq-section         { padding: 56px 20px; }
     }
 
@@ -776,10 +863,11 @@
       .testimonial-video-wrap { max-width: 100%; }
     }
 
-    /* CTA heading: prevent wrapping awkwardly on mid-sizes */
+    /* Contact + Setup headings: prevent wrapping awkwardly on mid-sizes */
     @media (max-width: 600px) {
-      .cta-section h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
-      .cta-section p  { font-size: 15px; }
+      .contact-inner h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
+      .contact-inner > p { font-size: 15px; }
+      .setup-inner > h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
     }
 
     /* Reviews iframe: never wider than viewport */
@@ -794,7 +882,7 @@
       <a class="nav-logo" href="/">DMHQ</a>
       <div class="nav-right">
         <a class="nav-link" href="https://dmhq.ai" target="_blank" rel="noopener">dmhq.ai</a>
-        <a class="nav-link" href="/contact">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
         <a class="btn btn-primary" href="https://app.dmhq.net/" target="_blank" rel="noopener">Login</a>
       </div>
     </div>
@@ -812,8 +900,34 @@
       <h1>GoHighLevel <span class="grad-text">Done With You.</span></h1>
       <p>We build and run the backend in your GoHighLevel so you can run the business. You work with one local team instead of a ticket queue or a string of freelancers.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary btn-lg" href="/contact">Get in touch →</a>
+        <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
         <a class="btn btn-outline btn-lg" href="https://app.dmhq.net/" target="_blank" rel="noopener">Login</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="eyebrow">Start here</div>
+      <h2>Get in touch</h2>
+      <p>Tell us about your business and we'll get back to you within one business day.</p>
+      <div class="contact-form-wrap">
+        <iframe
+          src="https://link.dmhq.net/widget/form/NKzqasBap0ymiI5674z8"
+          id="inline-NKzqasBap0ymiI5674z8"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-activation-type="alwaysActivated"
+          data-deactivation-type="neverDeactivate"
+          data-form-name="Website Contact"
+          data-height="674"
+          data-layout-iframe-id="inline-NKzqasBap0ymiI5674z8"
+          data-form-id="NKzqasBap0ymiI5674z8"
+          data-cookie-consent="true"
+          data-cookie-consent-provider="auto"
+          title="Website Contact">
+        </iframe>
       </div>
     </div>
   </section>
@@ -877,6 +991,9 @@
         </ul>
       </div>
     </div>
+    <div class="section-cta-wrap">
+      <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
+    </div>
   </section>
 
   <!-- VIDEO TESTIMONIAL -->
@@ -889,6 +1006,9 @@
         </video>
       </div>
       <p class="testimonial-credit">Studio Servan</p>
+      <div class="section-cta-wrap">
+        <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
+      </div>
     </div>
   </section>
 
@@ -899,6 +1019,9 @@
       <div class="reviews-widget-wrap">
         <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'></script>
         <iframe class='lc_reviews_widget' src='https://reputationhub.site/reputation/widgets/review_widget/mtBYwjxtVs40gOfGSlXU?widgetId=6ac64210d5cfb3726b08464a' frameborder='0' scrolling='no' style='min-width: 100%; width: 100%;'></iframe>
+      </div>
+      <div class="section-cta-wrap">
+        <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
       </div>
     </div>
   </section>
@@ -956,7 +1079,7 @@
             <li class="pricing-feature"><span class="pricing-check">✓</span> You keep your existing GoHighLevel account</li>
           </ul>
           <p class="pricing-note">In addition to your existing GoHighLevel software subscription.</p>
-          <a class="btn btn-outline btn-lg pricing-cta" href="/contact">Get started</a>
+          <a class="btn btn-outline btn-lg pricing-cta" href="#contact">Get started</a>
         </div>
 
         <!-- Agency -->
@@ -977,19 +1100,49 @@
             <li class="pricing-feature"><span class="pricing-check">✓</span> Additional work covered by a SOW</li>
           </ul>
           <p class="pricing-note pricing-note--highlight">GoHighLevel subscription included. No extra software costs.</p>
-          <a class="btn btn-primary btn-lg pricing-cta" href="/contact">Get started</a>
+          <a class="btn btn-primary btn-lg pricing-cta" href="#contact">Get started</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- CTA SECTION -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <h2>Learn GoHighLevel in years, or have experts set you up in weeks with support</h2>
-      <p>Most businesses spend months figuring it out. We already know it. You get a working system, a local team behind it, and your time back.</p>
-      <a class="btn btn-primary btn-lg" href="/contact">Get in touch →</a>
+  <!-- SETUP INCLUDES -->
+  <section class="setup-section">
+    <div class="setup-inner">
+      <div class="eyebrow">What's included in your setup</div>
+      <h2>Five things built <span class="grad-text">before day one</span></h2>
+      <p class="setup-intro">Every setup includes these five components configured to your business, so the system is running when you go live.</p>
+      <div class="setup-grid">
+        <div class="setup-item">
+          <span class="setup-icon">C</span>
+          <div class="setup-title">Calendar</div>
+          <p class="setup-desc">Booking automations with salesperson calendars connected to avoid double-bookings.</p>
+        </div>
+        <div class="setup-item">
+          <span class="setup-icon">F</span>
+          <div class="setup-title">Forms</div>
+          <p class="setup-desc">Qualifying forms for your three services: paid ads, email marketing and social media.</p>
+        </div>
+        <div class="setup-item">
+          <span class="setup-icon">E</span>
+          <div class="setup-title">Email</div>
+          <p class="setup-desc">Meeting reminders and post-meeting follow-up sequences sent automatically.</p>
+        </div>
+        <div class="setup-item">
+          <span class="setup-icon">P</span>
+          <div class="setup-title">Pipeline</div>
+          <p class="setup-desc">Sales pipeline with stages matched to your sales process from first contact to close.</p>
+        </div>
+        <div class="setup-item">
+          <span class="setup-icon">T</span>
+          <div class="setup-title">Training</div>
+          <p class="setup-desc">Custom video walkthroughs for your team so the system is easy to use from day one.</p>
+        </div>
+      </div>
+      <div class="section-cta-wrap">
+        <a class="btn btn-primary btn-lg" href="#contact">Get in touch →</a>
+      </div>
     </div>
   </section>
 
@@ -1092,7 +1245,7 @@
 
     // Scroll fade-in for sections below the hero
     const scrollFadeEls = document.querySelectorAll(
-      '.compare-section, .testimonial-section, .reviews-section, .clients-section, .pricing-section, .cta-section, .faq-section'
+      '.contact-section, .compare-section, .testimonial-section, .reviews-section, .clients-section, .pricing-section, .setup-section, .faq-section'
     );
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
