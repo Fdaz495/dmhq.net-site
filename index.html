@@ -826,7 +826,7 @@
 
     /* Hero: tighter vertical padding, capped heading */
     @media (max-width: 520px) {
-      .hero { padding: 56px 20px 56px; }
+      .hero { padding: 48px 20px 36px; }
       .hero h1 { font-size: clamp(1.9rem, 8vw, 2.5rem); }
       .hero p { font-size: 15px; }
       .eyebrow { font-size: 10px; letter-spacing: 1px; }
@@ -847,13 +847,13 @@
 
     /* Sections: reduce 96px vertical padding on mobile */
     @media (max-width: 520px) {
-      .testimonial-section { padding: 56px 20px; }
-      .reviews-section     { padding: 56px 16px; }
-      .pricing-section     { padding: 56px 16px; }
-      .contact-section { padding: 56px 20px; }
-      .setup-section   { padding: 56px 20px; }
+      .testimonial-section { padding: 40px 20px; }
+      .reviews-section     { padding: 40px 16px; }
+      .pricing-section     { padding: 40px 16px; }
+      .contact-section { padding: 40px 20px; }
+      .setup-section   { padding: 40px 20px; }
       .setup-row       { gap: 0 16px; }
-      .faq-section         { padding: 56px 20px; }
+      .faq-section         { padding: 40px 20px; }
     }
 
     /* Pricing: full-width on mobile already via grid, ensure card doesn't overflow */
@@ -1111,37 +1111,37 @@
     </div>
   </section>
 
-  <!-- SETUP INCLUDES -->
+  <!-- PROCESS -->
   <section class="setup-section">
     <div class="setup-inner">
-      <div class="eyebrow">What's included in your setup</div>
-      <h2>Five things built <span class="grad-text">before day one</span></h2>
-      <p class="setup-intro">Every setup includes these five components configured to your business, so the system is running when you go live.</p>
+      <div class="eyebrow">How it works</div>
+      <h2>How we build the system <span class="grad-text">around your business</span></h2>
+      <p class="setup-intro">Five steps from first contact to a running GoHighLevel system built for how you operate.</p>
       <ul class="setup-list">
         <li class="setup-row">
           <span class="setup-num">01</span>
-          <div class="setup-title">Calendar</div>
-          <p class="setup-desc">Booking automations with salesperson calendars connected to avoid double-bookings.</p>
+          <div class="setup-title">Complete the form</div>
+          <p class="setup-desc">Tell us about your business, your current setup, and what you want GoHighLevel to do for you.</p>
         </li>
         <li class="setup-row">
           <span class="setup-num">02</span>
-          <div class="setup-title">Forms</div>
-          <p class="setup-desc">Qualifying forms for your three services: paid ads, email marketing and social media.</p>
+          <div class="setup-title">We schedule a call</div>
+          <p class="setup-desc">We get back to you within one business day to book a time that works for you.</p>
         </li>
         <li class="setup-row">
           <span class="setup-num">03</span>
-          <div class="setup-title">Email</div>
-          <p class="setup-desc">Meeting reminders and post-meeting follow-up sequences sent automatically.</p>
+          <div class="setup-title">We understand your business</div>
+          <p class="setup-desc">On the call we go through your business needs, your sales process, and the gaps where GoHighLevel can make the biggest difference.</p>
         </li>
         <li class="setup-row">
           <span class="setup-num">04</span>
-          <div class="setup-title">Pipeline</div>
-          <p class="setup-desc">Sales pipeline with stages matched to your sales process from first contact to close.</p>
+          <div class="setup-title">We build</div>
+          <p class="setup-desc">We configure your GoHighLevel system to match how your business actually runs, not a generic template.</p>
         </li>
         <li class="setup-row">
           <span class="setup-num">05</span>
-          <div class="setup-title">Training</div>
-          <p class="setup-desc">Custom video walkthroughs for your team so the system is easy to use from day one.</p>
+          <div class="setup-title">Custom walkthrough video</div>
+          <p class="setup-desc">We record a walkthrough of everything we built, specific to your account, so your team can use the system from day one.</p>
         </li>
       </ul>
       <div class="section-cta-wrap">
@@ -1247,9 +1247,9 @@
       });
     });
 
-    // Scroll fade-in for sections below the hero
+    // Scroll fade-in — contact section excluded so it's always visible on initial load
     const scrollFadeEls = document.querySelectorAll(
-      '.contact-section, .compare-section, .testimonial-section, .reviews-section, .clients-section, .pricing-section, .setup-section, .faq-section'
+      '.compare-section, .testimonial-section, .reviews-section, .clients-section, .pricing-section, .setup-section, .faq-section'
     );
     const scrollObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1267,16 +1267,31 @@
       scrollObserver.observe(el);
     });
 
-    // Hover-play videos
+    // Hover-play videos (desktop) + scroll-into-view autoplay (touch/mobile)
+    const isTouch = window.matchMedia('(hover: none)').matches;
     document.querySelectorAll('.hover-video').forEach(video => {
       const wrap = video.closest('.compare-video-wrap');
-      wrap.addEventListener('mouseenter', () => {
-        video.play().catch(() => {});
-      });
-      wrap.addEventListener('mouseleave', () => {
-        video.pause();
-        video.currentTime = 0;
-      });
+      if (isTouch) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+              video.currentTime = 0;
+            }
+          });
+        }, { threshold: 0.5 });
+        videoObserver.observe(wrap);
+      } else {
+        wrap.addEventListener('mouseenter', () => {
+          video.play().catch(() => {});
+        });
+        wrap.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
     });
   </script>
 </body>
