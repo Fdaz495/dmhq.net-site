@@ -471,21 +471,28 @@
       margin-bottom: 56px;
     }
     .setup-row {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 0 24px;
-      padding: 28px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      padding: 32px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      align-items: start;
     }
     @media (min-width: 640px) {
-      .setup-row { grid-template-columns: 36px 160px 1fr; }
+      .setup-row {
+        display: grid;
+        grid-template-columns: 48px 200px 1fr;
+        gap: 0 32px;
+        align-items: center;
+        text-align: left;
+        flex-direction: unset;
+      }
     }
     .setup-num {
       font-family: "Unica One", sans-serif;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: 0.5px;
-      padding-top: 2px;
       background: var(--grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -493,22 +500,24 @@
     }
     .setup-title {
       font-family: "Inter", sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       text-transform: none;
       letter-spacing: 0;
-      line-height: 1.45;
+      line-height: 1.4;
       color: var(--white);
-      margin-bottom: 6px;
     }
-    @media (min-width: 640px) { .setup-title { margin-bottom: 0; padding-top: 1px; } }
+    @media (min-width: 640px) {
+      .setup-title { font-size: 19px; }
+    }
     .setup-desc {
       font-size: 14px;
       color: var(--gray-400);
       line-height: 1.6;
-      grid-column: 2;
     }
-    @media (min-width: 640px) { .setup-desc { grid-column: 3; } }
+    @media (min-width: 640px) {
+      .setup-desc { font-size: 15px; }
+    }
 
     /* ─── FAQ ─── */
     .faq-section {
@@ -883,7 +892,6 @@
       .pricing-section     { padding: 40px 16px; }
       .contact-section { padding: 40px 20px; }
       .setup-section   { padding: 40px 20px; }
-      .setup-row       { gap: 0 16px; }
       .faq-section         { padding: 40px 20px; }
     }
 
@@ -1312,31 +1320,27 @@
       scrollObserver.observe(el);
     });
 
-    // Hover-play videos (desktop) + scroll-into-view autoplay (touch/mobile)
-    const isTouch = window.matchMedia('(hover: none)').matches;
+    // Videos: play when in view on all devices; hover also works on desktop
     document.querySelectorAll('.hover-video').forEach(video => {
       const wrap = video.closest('.compare-video-wrap');
-      if (isTouch) {
-        const videoObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-              video.currentTime = 0;
-            }
-          });
-        }, { threshold: 0.5 });
-        videoObserver.observe(wrap);
-      } else {
-        wrap.addEventListener('mouseenter', () => {
-          video.play().catch(() => {});
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
         });
-        wrap.addEventListener('mouseleave', () => {
+      }, { threshold: 0.5 });
+      videoObserver.observe(wrap);
+      // Desktop hover resets when leaving if video is still in view
+      wrap.addEventListener('mouseleave', () => {
+        if (!wrap.matches(':hover')) {
           video.pause();
           video.currentTime = 0;
-        });
-      }
+        }
+      });
     });
   </script>
 </body>
